@@ -1,13 +1,15 @@
 # Data Structures in C++
 
+# Pairs (#include <utility>)
+The std::pair template provides an easy means of grouping two items into a structure:
+    
+```c++
+std::pair<int, char> p(1, ‘a‘);
+std::cout << p.first << ‘ ‘ << p.second << std::endl; // 1 a
+```
+
 # Vector std::vector
-Use for
-* Simple storage
-* Adding but not deleting
-* Serialization
-* Quick lookups by index
-* Easy conversion to C-style arrays
-* Efficient traversal (contiguous CPU caching)
+Dynamic arrays with the ability to resize itself automatically when an element is inserted or deleted, with their storage being handled automatically by the container. Vector elements are placed in contiguous storage so that they can be accessed and traversed using iterators. In vectors, data is inserted at the end. Inserting at the end takes differential time, as sometimes there may be a need to extend the array. Removing the last element takes only constant time because no resizing happens. Inserting and erasing at the beginning or in the middle is linear in time.
 
 Do not use for
 * Insertion/deletion in the middle of the list
@@ -53,6 +55,12 @@ for(std::vector<int>::iterator it = v.begin(); it != v.end(); it++) {
     std::cout << *it << std::endl;
 }
 
+// Iteration in reverse is done via a reverse iterator:
+//...
+for (vector<int>::reverse_iterator it = v.rbegin(); it != v.rend(); ++it) {
+    // ... *it ... (*it is the current vector element)
+}
+
 // Remove head, index, tail
 v.erase(v.begin());             // head
 v.erase(v.begin() + index);     // index
@@ -63,8 +71,10 @@ v.clear();
 ```
 
 # Deque std::deque
-
 Stands for Double Ended Queue. std::vector with efficient push_front and pop_front.
+
+The std::deque template provides a double-ended queue. Deques offer a similar interface to vectors, but additionally provide efficient insertion and deletion at the front of the data structure, as well as at the back. Thus, in addition to vector‘s push back and pop back, deques offer
+push front and pop front. Most vector operations are also available for deques, but be aware that deques are not guaranteed to be implemented internally as contiguous arrays.
 
 Do not use for
 * C-style contiguous storage (not guaranteed)
