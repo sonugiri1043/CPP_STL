@@ -191,6 +191,41 @@ l.reverse();
 ```
 
 # Map std::map and std::unordered_map
+Use for
+* Key-value pairs
+* Constant lookups by key
+* Searching if key/value exists
+* Removing duplicates
+* std::map
+   Ordered map
+* std::unordered_map
+   Hash table
+
+Do not use for
+* Sorting
+
+Notes
+* Typically ordered maps (std::map) are slower than unordered maps (std::unordered_map)
+* Maps are typically implemented as binary search trees
+
+Time Complexity
+
+```
+std::map
+
+Operation	Time Complexity
+Insert	O(log(n))
+Access by Key	O(log(n))
+Remove by Key	O(log(n))
+Find/Remove Value	O(log(n))
+std::unordered_map
+
+Operation	Time Complexity
+Insert	O(1)
+Access by Key	O(1)
+Remove by Key	O(1)
+Find/Remove Value	--
+```
 
 ```c++
 std::map<std::string, std::string> m;
@@ -231,6 +266,25 @@ unsigned int count = m.count("key");
 ```
 # Set std::set
 
+Use for
+* Removing duplicates
+* Ordered dynamic storage
+
+Do not use for
+* Simple storage
+* Direct access by index
+
+Notes
+* Sets are often implemented with binary search trees
+
+Time Complexity
+```
+Operation	Time Complexity
+Insert	O(log(n))
+Remove	O(log(n))
+Find	O(log(n))
+```
+
 ```c++
 std::set<int> s;
 
@@ -267,6 +321,17 @@ unsigned int count = s.count(20);
 ```
 
 # Stack std::stack
+Use for
+* First-In Last-Out operations
+* Reversal of elements
+
+Time Complexity
+```
+Operation	Time Complexity
+Push	O(1)
+Pop	O(1)
+Top	O(1)
+```
 
 ```c++
 std::stack<int> s;
@@ -290,6 +355,12 @@ int top = s.top();
 
 # Queue std::queue
 
+Use for
+* First-In First-Out operations
+* Ex: Simple online ordering system (first come first served)
+* Ex: CPU scheduling (FCFS)
+
+
 ```c++
 std::queue<int> q;
 
@@ -311,7 +382,19 @@ unsigned int size = q.size();
 q.pop();
 ```
 
-# Priority Queue std::priority_queue
+# Heap, Priority Queue std::priority_queue
+
+Use for
+* First-In First-Out operations where priority overrides arrival time
+* Ex: CPU scheduling (smallest job first, system/user priority)
+* Ex: Medical emergencies (gunshot wound vs. broken arm)
+
+Notes
+* A heap is essentially an instance of a priority queue
+* A min heap is structured with the root node as the smallest and each child subsequently larger than its parent
+* A max heap is structured with the root node as the largest and each child subsequently smaller than its parent
+* A min heap could be used for Smallest Job First CPU Scheduling
+* A max heap could be used for Priority CPU Scheduling
 
 ```c++
 std::priority_queue<int> p;
