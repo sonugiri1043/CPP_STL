@@ -1,6 +1,31 @@
 # Data Structures in C++
 
 # Vector std::vector
+Use for
+* Simple storage
+* Adding but not deleting
+* Serialization
+* Quick lookups by index
+* Easy conversion to C-style arrays
+* Efficient traversal (contiguous CPU caching)
+
+Do not use for
+* Insertion/deletion in the middle of the list
+* Dynamically changing storage
+* Non-integer indexing
+
+Time Complexity
+```
+Operation	Time Complexity
+Insert Head	O(n)
+Insert Index	O(n)
+Insert Tail	O(1)
+Remove Head	O(n)
+Remove Index	O(n)
+Remove Tail	O(1)
+Find Index	O(1)
+Find Object	O(n)
+```
 
 ```c++
 std::vector<int> v;
@@ -38,6 +63,26 @@ v.clear();
 ```
 
 # Deque std::deque
+
+Stands for Double Ended Queue. std::vector with efficient push_front and pop_front.
+
+Do not use for
+* C-style contiguous storage (not guaranteed)
+
+```
+Time Complexity
+
+Operation	Time Complexity
+Insert Head	O(1)
+Insert Index	O(n) or O(1)
+Insert Tail	O(1)
+Remove Head	O(1)
+Remove Index	O(n)
+Remove Tail	O(1)
+Find Index	O(1)
+Find Object	O(n)
+```
+
 ```c++
 std::deque<int> d;
 
@@ -69,6 +114,26 @@ d.clear();
 ```
 
 # List std::list
+Use for
+* Insertion into the middle/beginning of the list
+* Efficient sorting (pointer swap vs. copying)
+
+Do not use for
+* Direct access
+
+Time Complexity
+
+```
+Operation	Time Complexity
+Insert Head	O(1)
+Insert Index	O(n)
+Insert Tail	O(1)
+Remove Head	O(1)
+Remove Index	O(n)
+Remove Tail	O(1)
+Find Index	O(n)
+Find Object	O(n)
+```
 
 ```c++
 std::list<int> l;
