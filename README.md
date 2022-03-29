@@ -1,6 +1,6 @@
 # Data Structures in C++
 
-# Pairs (#include <utility>)
+# Pairs
 The std::pair template provides an easy means of grouping two items into a structure:
     
 ```c++
