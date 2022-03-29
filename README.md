@@ -124,3 +124,146 @@ l.sort();
 // Reverse: Reverse the list order
 l.reverse();
 ```
+
+# Map std::map and std::unordered_map
+
+```c++
+std::map<std::string, std::string> m;
+
+//---------------------------------
+// General Operations
+//---------------------------------
+
+// Insert
+m.insert(std::pair<std::string, std::string>("key", "value"));
+
+// Access by key
+std::string value = m.at("key");
+
+// Size
+unsigned int size = m.size();
+
+// Iterate
+for(std::map<std::string, std::string>::iterator it = m.begin(); it != m.end(); it++) {
+    std::cout << *it << std::endl;
+}
+
+// Remove by key
+m.erase("key");
+
+// Clear
+m.clear();
+
+//---------------------------------
+// Container-Specific Operations
+//---------------------------------
+
+// Find if an element exists by key
+bool exists = (m.find("key") != m.end());
+
+// Count the number of elements with a certain key
+unsigned int count = m.count("key");
+```
+# Set std::set
+
+```c++
+std::set<int> s;
+
+//---------------------------------
+// General Operations
+//---------------------------------
+
+// Insert
+s.insert(20);
+
+// Size
+unsigned int size = s.size();
+
+// Iterate
+for(std::set<int>::iterator it = s.begin(); it != s.end(); it++) {
+    std::cout << *it << std::endl;
+}
+
+// Remove
+s.erase(20);
+
+// Clear
+s.clear();
+
+//---------------------------------
+// Container-Specific Operations
+//---------------------------------
+
+// Find if an element exists
+bool exists = (s.find(20) != s.end());
+
+// Count the number of elements with a certain value
+unsigned int count = s.count(20);
+```
+
+# Stack std::stack
+
+```c++
+std::stack<int> s;
+
+//---------------------------------
+// Container-Specific Operations
+//---------------------------------
+
+// Push
+s.push(20);
+
+// Size
+unsigned int size = s.size();
+
+// Pop
+s.pop();
+
+// Top
+int top = s.top();
+```
+
+# Queue std::queue
+
+```c++
+std::queue<int> q;
+
+//---------------------------------
+// General Operations
+//---------------------------------
+
+// Insert
+q.push(value);
+
+// Access head, tail
+int head = q.front();       // head
+int tail = q.back();        // tail
+
+// Size
+unsigned int size = q.size();
+
+// Remove
+q.pop();
+```
+
+# Priority Queue std::priority_queue
+
+```c++
+std::priority_queue<int> p;
+
+//---------------------------------
+// General Operations
+//---------------------------------
+
+// Insert
+p.push(value);
+
+// Access
+int top = p.top();  // 'Top' element
+
+// Size
+unsigned int size = p.size();
+
+// Remove
+p.pop();
+```
