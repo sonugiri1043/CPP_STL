@@ -1,4 +1,5 @@
 # Data Structures in C++
+![sequence_containers](images/sequence_containers.png)
 
 # Pairs
 The std::pair template provides an easy means of grouping two items into a structure:
@@ -69,6 +70,7 @@ v.pop_back();                   // tail
 // Clear
 v.clear();
 ```
+![vector](images/vector.png)
 
 # Deque std::deque
 Stands for Double Ended Queue. std::vector with efficient push_front and pop_front.
@@ -122,6 +124,7 @@ d.pop_back();                   // tail
 // Clear
 d.clear();
 ```
+![deque](images/deque.png)
 
 # List std::list
 Use for
@@ -200,7 +203,11 @@ l.sort();
 l.reverse();
 ```
 
+![list](images/list.png)
+
 # Map std::map and std::unordered_map
+![associative_containers](images/associative_containers.png)
+
 Use for
 * Key-value pairs
 * Constant lookups by key
@@ -274,6 +281,10 @@ bool exists = (m.find("key") != m.end());
 // Count the number of elements with a certain key
 unsigned int count = m.count("key");
 ```
+![map](images/map.png)
+
+![unordered_map](images/unordered_map.png)
+
 # Set std::set
 
 Use for
@@ -329,6 +340,10 @@ bool exists = (s.find(20) != s.end());
 // Count the number of elements with a certain value
 unsigned int count = s.count(20);
 ```
+
+![set](images/set.png)
+
+![unordered_set](images/unordered_set.png)
 
 # Stack std::stack
 Use for
